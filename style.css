@@ -1,0 +1,40 @@
+body, html{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font: normal 16px arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(138, 183, 255);
+}
+
+section#main-section{
+    width: 500px;
+    height: 500px;
+    background: #4419c4;
+        /*Alinhamento*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+h1,footer {
+    text-align: center;
+}
+
+div#circle{
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    border-radius: 50%;
+    border: 3px solid black;
+    
+}
+div#circle:hover{
+    transition: 0.5s;
+    scale: 1.1;
+    box-shadow: 1px 1px 10px black;
+    
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" id="background">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body onload="displayClock">
+    <header>
+        <h1 id="main-title">Now is </h1>
+
+        <section id="main-section">
+            <div id="circle">
+
+            </div>
+        </section>
+        <footer>© Development by Vinicius E. Beuther</footer>
+    </header>
+
+    <script>
+        //Defining the variables
+            var backgroundBody = document.getElementById('background')
+            var h1 = document.getElementById('main-title')
+            var circleImage = document.getElementById('circle')
+            var today = new Date()
+            let hour = today.getHours()
+            let minute = today.getMinutes()
+            let second = today.getSeconds()
+         
+        //Conditional to see if the hour/minute/second is less then 10 and add a 0 in front    
+
+            if(minute < 10){
+                minute = "0" + minute
+            }
+            else if(hour < 10){
+                hour = "0" + hour
+            }
+            else if(second < 10){
+                second = "0" + second
+            }
+
+        //Conditional to choice between morning, afternoon and night.
+        //adding too a conditional formatting, coloring the background and changing the image inside the circle
+            if (hour >= 13 && hour <= 18)
+            {
+                h1.innerHTML = 'Afternoon ☀️: ' + hour + ':' + minute + ':' + second
+                backgroundBody.style.backgroundColor='#7dc7ff' 
+                circleImage.style.backgroundImage = "url('https://www.shutterstock.com/image-photo/blue-sky-white-fluffy-clouds-260nw-1940582191.jpg')"
+                circleImage.style.backgroundPosition = 'center'
+            }
+            else if(hour <= 12 && hour >= 0){
+                h1.innerHTML = 'Morning 🌅: ' + hour + ':' + minute + ':' + second
+                backgroundBody.style.backgroundColor = '#fffb7d'
+                circleImage.style.backgroundImage = "url('https://www.tekimobile.com/wp-content/uploads/2021/06/reflexoes-nascer-do-sol-1.webp')"
+                circleImage.style.backgroundPosition = 'center'
+                
+            }
+            else{
+                h1.innerHTML = 'Night 🌑: ' + hour + ':' + minute + ':' + second
+                backgroundBody.style.backgroundColor = '#130f3d'
+                circleImage.style.backgroundImage= "url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/%D0%A1%D0%B2%D0%B5%D1%82_%D0%BE%D1%82_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BD%D0%B8_-_panoramio.jpg/640px-%D0%A1%D0%B2%D0%B5%D1%82_%D0%BE%D1%82_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BD%D0%B8_-_panoramio.jpg')"
+                circleImage.style.backgroundPosition='center bottom'
+                h1.style.color = 'white'
+            }
+
+
+    </script>
+</body>
+</html>
